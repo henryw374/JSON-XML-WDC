@@ -4,9 +4,14 @@
   "description": "A simple Tableau Web Data Connector for connecting to JSON and XML data.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "babel public -d lib",
+    "build2": "WEBPACK_ENV=build webpack",
+    "dev": "WEBPACK_ENV=dev webpack"
   },
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/runtime": "^7.11.2",
     "express": "^4.17.1",
     "node-fetch": "^2.6.0",
     "xml2js": "^0.4.23"
@@ -23,5 +28,17 @@
     "xml",
     "tableau",
     "wdc"
-  ]
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-transform-modules-umd": "^7.10.4",
+    "@babel/preset-env": "^7.11.5",
+    "acorn": "^6.4.2",
+    "babel-loader": "^8.1.0",
+    "babel-polyfill": "^6.26.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  }
 }
